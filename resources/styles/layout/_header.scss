@@ -1,0 +1,16 @@
+h1 {
+  color: blue;
+}
+
+ul {
+  // list-style: none;
+  :first-child {
+    color: red;
+  }
+  :nth-child(2) {
+    color: green;
+  }
+  :last-child {
+    color: blue;
+  }
+}
