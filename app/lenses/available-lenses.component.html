@@ -1,8 +1,11 @@
 <h6>Available Lenses</h6>
 <div class="row">
-  <div class="input-field col l3">
-    <input id="searchbox"type="text" placeholder="Search Lenses" [(ngModel)]='searchCriteria'>
+  <div class="input-field col l3 searchContainer">
+    <input id="searchbox"type="text" placeholder="Search Brand" [(ngModel)]='searchFilter'>
   </div>
+  <!-- <div class="col l3">
+    Filtered: {{searchFilter}}
+  </div> -->
 </div>
 
 <table class="responsive-table">
@@ -19,7 +22,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor='#lens of lenses'>
+    <tr *ngFor='#lens of lenses | lensFilter:searchFilter'>
       <td>{{lens.datePosted}}</td>
       <td class="lens-images">
         <img [src]='lens.imageUrl'

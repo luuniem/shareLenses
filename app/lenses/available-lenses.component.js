@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './lens-filter.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,21 +10,25 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, lens_filter_pipe_1;
     var AvailableLensesComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (lens_filter_pipe_1_1) {
+                lens_filter_pipe_1 = lens_filter_pipe_1_1;
             }],
         execute: function() {
             AvailableLensesComponent = (function () {
                 function AvailableLensesComponent() {
                     this.pageTitle = "Available Lenses";
+                    this.searchFilter = ' ';
                     this.lenses = [
                         {
                             "datePosted": "8/29/16",
-                            "brand": "Canon",
+                            "brand": "panasonic",
                             "type": "Wide Angle",
                             "fLength": "11-24",
                             "description": "This super awesome USM L-series will take the ultimate wide angle pictures in Portland. I'm not using it right now. Price negotiable!",
@@ -34,9 +38,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         },
                         {
                             "datePosted": "8/15/16",
-                            "brand": "Canon",
+                            "brand": "Nikon",
                             "type": "Telephoto",
-                            "fLength": "11-24",
+                            "fLength": "24-70",
                             "description": "Great USM lens that will take mega awesome crispy pictures",
                             "location": "Alder Street",
                             "price": 15,
@@ -57,7 +61,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 AvailableLensesComponent = __decorate([
                     core_1.Component({
                         selector: 'av-lenses',
-                        templateUrl: 'app/lenses/available-lenses.component.html'
+                        templateUrl: 'app/lenses/available-lenses.component.html',
+                        pipes: [lens_filter_pipe_1.LensFilterPipe]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AvailableLensesComponent);

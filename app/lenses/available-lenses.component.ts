@@ -1,17 +1,20 @@
 import { Component } from 'angular2/core';
 import { ILens } from './lens';
+import { LensFilterPipe } from './lens-filter.pipe';
 
 @Component ({
   selector: 'av-lenses',
-  templateUrl: 'app/lenses/available-lenses.component.html'
+  templateUrl: 'app/lenses/available-lenses.component.html',
+  pipes: [LensFilterPipe]
 })
 
 export class AvailableLensesComponent {
   pageTitle: string = "Available Lenses";
+  searchFilter: string =' ';
   lenses: ILens[] = [
                     {
                       "datePosted": "8/29/16",
-                      "brand": "Canon",
+                      "brand": "panasonic",
                       "type" : "Wide Angle",
                       "fLength": "11-24",
                       "description": "This super awesome USM L-series will take the ultimate wide angle pictures in Portland. I'm not using it right now. Price negotiable!",
@@ -21,9 +24,9 @@ export class AvailableLensesComponent {
                     },
                     {
                       "datePosted": "8/15/16",
-                      "brand": "Canon",
+                      "brand": "Nikon",
                       "type" : "Telephoto",
-                      "fLength": "11-24",
+                      "fLength": "24-70",
                       "description": "Great USM lens that will take mega awesome crispy pictures",
                       "location": "Alder Street",
                       "price": 15,
