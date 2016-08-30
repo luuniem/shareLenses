@@ -1,0 +1,38 @@
+<h6>Available Lenses</h6>
+<div class="row">
+  <div class="input-field col l3">
+    <input id="searchbox"type="text" placeholder="Search Lenses" [(ngModel)]='searchCriteria'>
+  </div>
+</div>
+
+<table class="responsive-table">
+  <thead>
+    <tr>
+      <th data-field="datePost">Date Posted</th>
+      <th>Images</th>
+      <th data-field="brand">Brand</th>
+      <th data-field="type">Type</th>
+      <th data-field="fLength">Focal Length (mm)</th>
+      <th data-field="description">Description</th>
+      <th data-field="location">Location</th>
+      <th data-field="price">Price Per Day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='#lens of lenses'>
+      <td>{{lens.datePosted}}</td>
+      <td class="lens-images">
+        <img [src]='lens.imageUrl'
+             [title]='lens.brand'
+             [style.width.px]='imgWidth'
+             [style.margin.px]='imgMargin'>
+      </td>
+      <td>{{lens.brand}}</td>
+      <td>{{lens.type}}</td>
+      <td>{{lens.fLength}}</td>
+      <td>{{lens.description}}</td>
+      <td>{{lens.location}}</td>
+      <td>{{lens.price}}</td>
+    </tr>
+  </tbody>
+</table>
