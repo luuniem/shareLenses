@@ -6,5 +6,6 @@ export interface ILens {
   description: string;
   location: string;
   price: number;
+  rating: number;
   imageUrl: string;
 }

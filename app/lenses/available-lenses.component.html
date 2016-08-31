@@ -3,12 +3,9 @@
   <div class="input-field col l3 searchContainer">
     <input id="searchbox"type="text" placeholder="Search Brand" [(ngModel)]='searchFilter'>
   </div>
-  <!-- <div class="col l3">
-    Filtered: {{searchFilter}}
-  </div> -->
 </div>
 
-<table class="responsive-table">
+<table class="table table-responsive">
   <thead>
     <tr>
       <th data-field="datePost">Date Posted</th>
@@ -19,6 +16,7 @@
       <th data-field="description">Description</th>
       <th data-field="location">Location</th>
       <th data-field="price">Price Per Day</th>
+      <th data-field="rating">Ratings</th>
     </tr>
   </thead>
   <tbody>
@@ -36,6 +34,7 @@
       <td>{{lens.description}}</td>
       <td>{{lens.location}}</td>
       <td>{{lens.price | currency:'USD':true:'2.2-2'}}</td>
+      <td><thumb-icon [rating]='lens.rating'></thumb-icon></td>
     </tr>
   </tbody>
 </table>
