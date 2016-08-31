@@ -1,16 +1,14 @@
 import { Injectable } from 'angular2/core';
 import { ILens } from './lens';
-import { Http, Response } from 'angular2/http';
-import { Observable } from 'rxjs/Observable';
+// import { Http, Response } from 'angular2/http';
+// import { Observable } from 'rxjs/Observable';
+
 
 
 @Injectable()
 export class LensService {
-
-  constructor(private _http: Http) { }
-  getLenses(): ILens[]{
-    return [
-                      {
+  getLenses(): ILens[] {
+    return [ {
                         "datePosted": "8/29/16",
                         "brand": "panasonic",
                         "type" : "Wide Angle",
@@ -42,7 +40,24 @@ export class LensService {
                         "price": 25,
                         "rating":2,
                         "imageUrl": "http://shop.usa.canon.com/wcsstore/ExtendedSitesCatalogAssetStore/ef28-300_35-56isusm_1_xl.jpg"
-                      },
-                      ];
+                      }
+                    ];
+
   }
-}
+
+//Comment section is for firebase, but not yet working.
+  // private _lensUrl = 'https://sharelenses.firebaseio.com/';
+  //
+  // constructor(private _http: Http) { }
+  //
+  // getLenses(): Observable<ILens[]> {
+  //   return this._http.get(this._lensUrl)
+  //     .map((response: Response) => <ILens[]>response.json())
+  //     .do(lenses => console.log("All: " + JSON.stringify(lenses)))
+  //     .catch(this.handleError);
+  // }
+  //
+  // private handleError(error: Response){
+  //   console.error(error);
+  //   return Observable.throw(error.json().error || 'Server error');
+  }

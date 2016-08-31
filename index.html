@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
   <head>
+    <!-- base tells router how to compose navigation url's -->
+    <base href="/">
     <title>Start</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,8 +20,12 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    <script src="node_moodules/angular2/bundles/http.dev.js">  </script>
+    <!-- script below is for HTTP -->
+    <script src="node_modules/angular2/bundles/http.dev.js">  </script>
+    <!-- script below is for routing -->
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
     <link rel="stylesheet" href="build/css/styles.css">
+
 
   </head>
 

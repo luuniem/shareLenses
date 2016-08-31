@@ -23,10 +23,11 @@
     <tr *ngFor='#lens of lenses | lensFilter:searchFilter'>
       <td>{{lens.datePosted}}</td>
       <td class="lens-images">
-        <img [src]='lens.imageUrl'
+        <a [routerLink]="['LensDetail', {id: lens.brand}]"><img [src]='lens.imageUrl'
              [title]='lens.brand'
              [style.width.px]='imgWidth'
              [style.margin.px]='imgMargin'>
+        </a>
       </td>
       <td>{{lens.brand}}</td>
       <td>{{lens.type}}</td>
