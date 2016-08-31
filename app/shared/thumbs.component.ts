@@ -8,9 +8,9 @@ import { Component, OnChanges, Input } from 'angular2/core';
 
 export class ThumbComponent {
   @Input() rating: number;
-  thumbWidth: number;
+  thumbsWidth: number;
 
   ngOnChanges(): void {
-    this.thumbWidth = this.rating * 86/5;
+    this.thumbsWidth = this.rating * 86/5;
   }
 }

@@ -22,7 +22,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 function ThumbComponent() {
                 }
                 ThumbComponent.prototype.ngOnChanges = function () {
-                    this.thumbWidth = this.rating * 86 / 5;
+                    this.thumbsWidth = this.rating * 86 / 5;
                 };
                 __decorate([
                     core_1.Input(), 
