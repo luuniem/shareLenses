@@ -6,6 +6,7 @@ import { LensService } from './lenses/lens.service';
 import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 import { WelcomeComponent } from './home/welcome.component';
 import {LensDetailComponent } from './lenses/lens-detail.component';
+import { NewLensComponent} from './lenses/new-lens.component';
 
 @Component({
   selector: 'my-app',
@@ -21,6 +22,7 @@ import {LensDetailComponent } from './lenses/lens-detail.component';
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a [routerLink]="['Welcome']">Home</a></li>
           <li><a [routerLink]="['Lenses']">Available Lenses</a></li>
+          <li><a [routerLink]="['NewLens']">Post Lens</a></li>
         </ul>
       </div>
       </nav>
@@ -32,7 +34,8 @@ import {LensDetailComponent } from './lenses/lens-detail.component';
 @RouteConfig([
   { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true},
   { path: '/available-lenses', name: 'Lenses', component: AvailableLensesComponent },
-  { path: '/lens/:id', name: 'LensDetail', component: LensDetailComponent }
+  { path: '/lens/:id', name: 'LensDetail', component: LensDetailComponent },
+  { path: '/post-lens', name: 'NewLens', component: NewLensComponent}
 ])
 
 export class AppComponent {
