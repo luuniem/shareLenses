@@ -4,10 +4,10 @@ export class Lens {
     public brand: string,
     public type: string,
     public fLength: string,
-    public description: string,
     public location: string,
     public price: number,
     public rating: number,
-    public imageUrl: string
+    public imageUrl: string,
+    public description: string
   ){}
 }

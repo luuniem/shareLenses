@@ -7,6 +7,7 @@ import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/route
 import { WelcomeComponent } from './home/welcome.component';
 import {LensDetailComponent } from './lenses/lens-detail.component';
 import { NewLensComponent} from './lenses/new-lens.component';
+import { Lens } from './lenses/lens.model';
 
 @Component({
   selector: 'my-app',

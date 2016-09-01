@@ -2,3 +2,9 @@
 @import 'base/index';
 @import 'components/index';
 @import 'layout/index';
+@import "animate";
+
+nav {
+  background: #34252F;
+  transition: all .5s;
+}

@@ -1,6 +1,6 @@
-<h6>Available Lenses</h6>
-<div class="row">
-  <div class="input-field col l3 searchContainer">
+<h2 class="subheader">Available lenses for rent in your area</h2>
+<div class="row filterBox">
+  <div class="input-field col l5 searchContainer">
     <input id="searchbox"type="text" placeholder="Search Brand" [(ngModel)]='searchFilter'>
   </div>
 </div>
@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor='#lens of lenses | lensFilter:searchFilter'>
+    <tr class="animated slideInUp"*ngFor='#lens of lenses | lensFilter:searchFilter'>
       <td>{{lens.datePosted}}</td>
       <td class="lens-images">
         <a [routerLink]="['LensDetail', {id: lens.brand}]"><img [src]='lens.imageUrl'

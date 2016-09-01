@@ -1,3 +1,52 @@
 <div class="newLenses">
-  This page is for add new lenses
+  <h2>Got a lens to share?</h2>
+  <h3>Fill out the form below and make some greens!</h3>
+</div>
+<div class="container">
+  <div class="row newLensSection">
+    <div class="input-field col l2">
+      <input  type="text" #newDate>
+      <label class="active">Date</label>
+    </div>
+    <div class="input-field col l2" #newBrand>
+      <input  type="text" >
+      <label class="active">Brand(Canon)</label>
+    </div>
+    <div class="input-field col l2">
+      <input  type="text" #newType>
+      <label class="active">Type(Telephoto)</label>
+    </div>
+    <div class="input-field col l2">
+      <input  type="text" #newLength >
+      <label class="active">Focal Length (11-24)</label>
+    </div>
+  </div>
+  <div class="row newLensSection">
+    <div class="input-field col l2">
+      <input  type="text" #newLocation >
+      <label class="active">Your Location</label>
+    </div>
+    <div class="input-field col l2">
+      <input  type="text" #newPrice >
+      <label class="active">Price Per Day</label>
+    </div>
+    <div class="input-field col l2">
+      <input  type="text" #newRating >
+      <label class="active">Condition</label>
+    </div>
+    <div class="input-field col l2">
+      <input  type="text" #newImage >
+      <label class="active">Image</label>
+    </div>
+  </div>
+  <div class="row newLensSection">
+    <div class="input-field col l12">
+      <textarea lass="materialize-textarea" #newDescription placeholder="Description"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="submit-button col l12 newLensSection">
+      <a (click)="createLens(newDate, newBrand, newType, newLength, newLocation, newPrice, newRating, newImage, newDescription)" class="waves-effect waves-light btn">Add Lens</a>
+    </div>
+  </div>
 </div>

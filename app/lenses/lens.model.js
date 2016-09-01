@@ -6,16 +6,16 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             Lens = (function () {
-                function Lens(datePosted, brand, type, fLength, description, location, price, rating, imageUrl) {
+                function Lens(datePosted, brand, type, fLength, location, price, rating, imageUrl, description) {
                     this.datePosted = datePosted;
                     this.brand = brand;
                     this.type = type;
                     this.fLength = fLength;
-                    this.description = description;
                     this.location = location;
                     this.price = price;
                     this.rating = rating;
                     this.imageUrl = imageUrl;
+                    this.description = description;
                 }
                 return Lens;
             }());

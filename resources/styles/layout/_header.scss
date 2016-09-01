@@ -1,16 +1,8 @@
-h1 {
-  color: blue;
-}
-
-ul {
-  // list-style: none;
-  :first-child {
-    color: red;
-  }
-  :nth-child(2) {
-    color: green;
-  }
-  :last-child {
-    color: blue;
-  }
+.welcome-header {
+  background: url('../../app/images/hero-welcome.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 90vh;
 }

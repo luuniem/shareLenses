@@ -1,4 +1,4 @@
-System.register(['angular2/core', './lens.service', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './lens.model'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,31 +10,45 @@ System.register(['angular2/core', './lens.service', 'angular2/router'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, lens_service_1, router_1;
+    var core_1, router_1, lens_model_1;
     var NewLensComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (lens_service_1_1) {
-                lens_service_1 = lens_service_1_1;
-            },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (lens_model_1_1) {
+                lens_model_1 = lens_model_1_1;
             }],
         execute: function() {
             NewLensComponent = (function () {
-                function NewLensComponent(_lensService) {
-                    this._lensService = _lensService;
-                    this.pageTitle = "Post a New Lens";
+                function NewLensComponent() {
+                    this.onSubmitNewLens = new core_1.EventEmitter();
                 }
+                NewLensComponent.prototype.createLens = function (userDate, userBrand, userType, userLength, userDescription, userLocation, userPrice, userRating, userImage) {
+                    var newLens = new lens_model_1.Lens(userDate.value, userBrand.value, userType.value, userLength.value, userLocation.value, parseInt(userPrice.value), parseInt(userRating.value), userImage.value, userDescription.value);
+                    this.onSubmitNewLens.emit(newLens);
+                    userDate.value = "";
+                    userBrand.value = "";
+                    userType.value = "";
+                    userLength.value = "";
+                    userDescription.value = "";
+                    userLocation.value = "";
+                    userPrice.value = "";
+                    userRating.value = "";
+                    userImage.value = "";
+                };
                 NewLensComponent = __decorate([
                     core_1.Component({
+                        selector: 'new-lens',
+                        outputs: ['onSubmitNewLens'],
                         templateUrl: 'app/lenses/new-lens.component.html',
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
-                    __metadata('design:paramtypes', [lens_service_1.LensService])
+                    __metadata('design:paramtypes', [])
                 ], NewLensComponent);
                 return NewLensComponent;
             }());

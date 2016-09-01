@@ -1,4 +1,4 @@
-System.register(['angular2/core', './lens-filter.pipe', '../shared/thumbs.component', './lens.service', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', './lens-filter.pipe', '../shared/thumbs.component', './lens.service', 'angular2/router', './new-lens.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './lens-filter.pipe', '../shared/thumbs.compon
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, lens_filter_pipe_1, thumbs_component_1, lens_service_1, router_1;
+    var core_1, lens_filter_pipe_1, thumbs_component_1, lens_service_1, router_1, new_lens_component_1;
     var AvailableLensesComponent;
     return {
         setters:[
@@ -28,6 +28,9 @@ System.register(['angular2/core', './lens-filter.pipe', '../shared/thumbs.compon
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (new_lens_component_1_1) {
+                new_lens_component_1 = new_lens_component_1_1;
             }],
         execute: function() {
             AvailableLensesComponent = (function () {
@@ -44,11 +47,17 @@ System.register(['angular2/core', './lens-filter.pipe', '../shared/thumbs.compon
                 AvailableLensesComponent.prototype.ngOnInit = function () {
                     this.lenses = this._lensService.getLenses();
                 };
+                // createLens(datePosted: string, brand: string, type: string, fLength: string, location: string, price: number, rating: number, imageUrl, string, description: string): void {
+                //   new Lens()
+                // }
+                AvailableLensesComponent.prototype.createLens = function (newLens) {
+                    this.availableLens.push(newLens);
+                };
                 AvailableLensesComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/lenses/available-lenses.component.html',
                         pipes: [lens_filter_pipe_1.LensFilterPipe],
-                        directives: [thumbs_component_1.ThumbComponent, router_1.ROUTER_DIRECTIVES]
+                        directives: [thumbs_component_1.ThumbComponent, router_1.ROUTER_DIRECTIVES, new_lens_component_1.NewLensComponent]
                     }), 
                     __metadata('design:paramtypes', [lens_service_1.LensService])
                 ], AvailableLensesComponent);
